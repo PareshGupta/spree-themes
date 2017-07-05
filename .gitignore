@@ -23,9 +23,14 @@
 .byebug_history
 .keep
 
-# Other files
+# yml files
+config/database.yml
+config/cable.yml
+
+# public theme files
 public/vinsol_spree_themes
-config/*.yml
 public/system/spree/themes
 public/assets/vinsol_spree_theme
+
+# Other files
 .DS_Store
