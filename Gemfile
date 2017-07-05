@@ -1,3 +1,5 @@
+ruby "2.4.0"
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -9,7 +11,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
-gem 'mysql2'
+gem 'pg', '0.18.1'
 gem 'puma', '~> 3.7'
 
 # Use SCSS for stylesheets
