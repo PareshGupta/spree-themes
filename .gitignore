@@ -28,7 +28,7 @@ config/database.yml
 config/cable.yml
 
 # public theme files
-# public/vinsol_spree_themes
+public/vinsol_spree_themes
 public/system/spree/themes
 public/assets/vinsol_spree_theme
 
