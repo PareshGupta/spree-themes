@@ -26,6 +26,7 @@
 # yml files
 config/database.yml
 config/cable.yml
+config/secrets.yml
 
 # public theme files
 public/vinsol_spree_themes
