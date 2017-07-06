@@ -38,8 +38,10 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano',                  '~> 3.8.0'
+  gem 'capistrano-bundler',          '~> 1.2.0'
+  gem 'capistrano-passenger',        '~> 0.2.0'
+  gem 'capistrano-rails',            '~> 1.2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
