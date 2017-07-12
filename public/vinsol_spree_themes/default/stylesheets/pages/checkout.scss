@@ -1,0 +1,136 @@
+$color-white: #fff;
+$color-black: #000;
+$light-grey-bg: #f7f7f9;
+$link-maroon: #C14463;
+$border-grey: #c7c7c7;
+$border-light-grey: #e8e8e8;
+
+$full: 100%;
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Oswald', sans-serif;
+
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin select-appearance($option) {
+  -webkit-appearance: $option;
+  -moz-appearance: $option;
+  appearance: $option;
+}
+
+
+
+
+.checkout-section {
+  .checkout-progress-block {
+    margin-top: 20px;
+    border: solid 1px $border-grey;
+    padding: 15px;
+    background: $light-grey-bg;
+
+    .progress-steps {
+      width: $full;
+      margin-top: 0;
+      display: table;
+    }
+
+    li {
+      width: 25%;
+      float: left;
+      text-align: center;
+
+      &.active {
+        background: $color-black;
+
+        a {
+          font-family: $secondary-font;
+          font-size: 13px;
+          font-weight: 300;
+          text-transform: uppercase;
+          background: transparent;
+        }
+      }
+    }
+
+    .nav-pills {
+      & > li {
+        &+ li {
+          margin-left: 0;
+        }
+
+        a {
+          display: inline-block;
+          font-family: $secondary-font;
+          font-size: 13px;
+          font-weight: 300;
+          text-transform: uppercase;
+          @include border-radius(0);
+
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .checkout-content-section {
+    margin-top: 30px;
+  }
+
+  .checkout-address-save-block {
+    padding-top: 10px;
+  }
+
+  .checkout-address-button-row {
+    margin-top: 30px;
+    border-top: solid 1px $border-grey;
+    padding-top: 20px;
+  }
+}
+
+.checkout-address-form {
+  margin-top: 30px;
+
+  .checkout-billing-address-block {
+    margin-top: 20px;
+  }
+
+  .checkout-address-form-row {
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 300;
+      text-transform: uppercase;
+
+      abbr {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.checkout-shipping-address-form {
+  margin-top: 50px;
+}
+
+.checkout-summary-block {
+  border: solid 1px $border-grey;
+  padding: 15px;
+  background: $light-grey-bg;
+
+  .checkout-order-summery-total {
+    color: $color-black;
+    font-size: 18px;
+  }
+}

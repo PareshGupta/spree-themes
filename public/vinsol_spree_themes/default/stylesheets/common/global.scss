@@ -150,6 +150,11 @@ input {
   font-family: $secondary-font;
   font-size: 13px;
   font-weight: 700;
+
+  &.no-border {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .custom-select-holder {
@@ -162,6 +167,21 @@ input {
   font-size: 12px;
   line-height: 36px;
   background: $link-maroon;
+
+  &.select-white {
+    height: 40px;
+    border: solid 1px $border-grey;
+    color: $color-black;
+    background: $color-white;
+
+    .custom-select-arrow {
+      border-top: solid 5px $color-black;
+    }
+
+    .custom-select {
+      height: 40px;
+    }
+  }
 
   .custom-select-arrow {
     border-left: solid 5px transparent;
@@ -190,6 +210,14 @@ input {
       outline: none;
     }
   }
+}
+
+.global-input {
+  width: $full;
+  height: 40px;
+  border: solid 1px $border-grey;
+  padding: 0 10px;
+  font-size: 12px;
 }
 
 ul.pagination {
