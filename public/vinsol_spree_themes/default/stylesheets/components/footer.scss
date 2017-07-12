@@ -1,0 +1,52 @@
+$color-white: #fff;
+$color-black: #000;
+$light-grey-bg: #f7f7f9;
+$link-maroon: #C14463;
+$border-grey: #c7c7c7;
+
+$full: 100%;
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Oswald', sans-serif;
+
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin select-appearance($option) {
+  -webkit-appearance: $option;
+  -moz-appearance: $option;
+  appearance: $option;
+}
+
+
+
+.global-footer {
+  width: $full;
+  padding: 15px 0;
+  display: table;
+  color: $color-white;
+  font-weight: 300;
+  background: $color-black;
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-link {
+    margin-left: 20px;
+    color: $color-white;
+    font-family: $secondary-font;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $link-maroon;
+    }
+  }
+}
