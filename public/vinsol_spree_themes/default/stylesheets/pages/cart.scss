@@ -114,8 +114,47 @@ $secondary-font: 'Oswald', sans-serif;
     font-weight: 700;
   }
 
+  .cart-back-button-block {
+    float: left;
+  }
+
+  .cart-update-button-block {
+    padding-right: 0;
+    float: right;
+    text-align: right;
+  }
+
   .cart-button-or-text {
     padding: 10px 10px 0;
     display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .cart-section {
+    .cart-table {
+      margin-top: 0;
+    }
+
+    .cart-update-button-block {
+      width: $full;
+      padding-left: 0;
+      display: table;
+      float: none;
+      text-align: left;
+    }
+
+    .cart-back-button-block {
+      margin-top: 10px;
+      border-top: solid 1px $border-grey;
+      padding-top: 15px;
+      text-align: center;
+
+      .button-primary {
+        &.button-small {
+          width: $full;
+        }
+      }
+    }
   }
 }

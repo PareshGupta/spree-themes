@@ -6,8 +6,20 @@
     <% filters.each do |filter| %>
       <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
       <% next if labels.empty? %>
-      <div class="navigation" data-hook="navigation">
-        <h4 class="filter-title"> <%= filter[:name] %> </h4>
+      <div class="navigation sidebar-item" data-hook="navigation">
+        <h4 class="sidebar-title">
+          <div class="row">
+            <div class="col-xs-10 sidebar-title-text">
+              <%= filter[:name] %>
+            </div>
+            <div class="col-xs-2 sidebar-accordion-link">
+              <a href="javascript:" class="sidebar-accordion-link">
+                <span class="glyphicon glyphicon-chevron-down icon-down"></span>
+                <span class="glyphicon glyphicon-chevron-up icon-up"></span>
+              </a>
+            </div>
+          </div>
+        </h4>
         <ul class="list-group">
           <% labels.each do |nm,val| %>
             <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>

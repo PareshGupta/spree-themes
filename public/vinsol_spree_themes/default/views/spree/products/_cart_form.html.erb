@@ -61,15 +61,15 @@
     <% if @product.can_supply? %>
       <div class="add-to-cart product-cart-block">
         <div class="row">
-          <div class="col-sm-4 product-input-block">
+          <div class="col-sm-4 col-xs-5 product-input-block">
             <div class="row">
-              <div class="col-xs-2 product-qty-text">Qty</div>
-              <div class="col-xs-10">
+              <div class="col-sm-2 col-xs-3 product-qty-text">Qty</div>
+              <div class="col-sm-10 col-xs-9">
                 <%= number_field_tag :quantity, 1, class: 'product-qty-input', min: 1 %>
               </div>
             </div>
           </div>
-          <div class="col-sm-8 product-button-block">
+          <div class="col-sm-8 col-xs-7 product-button-block">
             <%= button_tag class: 'button-primary', id: 'add-to-cart-button', type: :submit do %>
               <%= Spree.t(:add_to_cart) %>
             <% end %>

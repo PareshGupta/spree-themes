@@ -1,47 +1,47 @@
-<div class="panel panel-default" id='shipping_method' data-hook>
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= Spree.t(:delivery) %></h3>
-  </div>
-  <div class="panel-body" data-hook="shipping_method_inner">
+<div class="checkout-delivery-section" id='shipping_method' data-hook>
+  <h3 class="section-subtitle"><%= Spree.t(:delivery) %></h3>
+  <div class="checkout-delivery-block" data-hook="shipping_method_inner">
     <div id="methods">
       <%= form.fields_for :shipments do |ship_form| %>
         <div class="shipment">
-          <h4 class="stock-location" data-hook="stock-location">
+          <h4 class="checkout-devivery-block-title" data-hook="stock-location">
             <%= Spree.t(:package_from) %>
             <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
           </h4>
 
-          <table class="table stock-contents" data-hook="stock-contents">
-            <colgroup>
-              <col style="width: 10%;" />
-              <col style="width: 60%;" />
-              <col style="width: 10%;" />
-              <col style="width: 20%;" />
-            </colgroup>
-            <thead>
-              <tr class="active">
-                <th></th>
-                <th align='left'><%= Spree.t(:item) %></th>
-                <th><%= Spree.t(:qty) %></th>
-                <th><%= Spree.t(:price) %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% ship_form.object.manifest.each do |item| %>
-                <tr class="stock-item">
-                  <td class="item-image"><%= mini_image(item.variant) %></td>
-                  <td class="item-name"><%= item.variant.name %></td>
-                  <td class="item-qty"><%= item.quantity %></td>
-                  <td class="item-price"><%= display_price(item.variant) %></td>
+          <div class="table-responsive checkout-delivery-table">
+            <table class="table stock-contents" data-hook="stock-contents">
+              <colgroup>
+                <col style="width: 10%;" />
+                <col style="width: 60%;" />
+                <col style="width: 10%;" />
+                <col style="width: 20%;" />
+              </colgroup>
+              <thead>
+                <tr class="active">
+                  <th></th>
+                  <th align='left'><%= Spree.t(:item) %></th>
+                  <th><%= Spree.t(:qty) %></th>
+                  <th><%= Spree.t(:price) %></th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <% ship_form.object.manifest.each do |item| %>
+                  <tr class="stock-item">
+                    <td class="item-image"><%= mini_image(item.variant) %></td>
+                    <td class="item-name"><%= item.variant.name %></td>
+                    <td class="item-qty"><%= item.quantity %></td>
+                    <td class="item-price"><%= display_price(item.variant) %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
 
-          <h4 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h4>
-          <ul class="list-group shipping-methods">
+          <h4 class="section-subtitle"><%= Spree.t(:shipping_method) %></h4>
+          <ul class="checkout-delivery-shipping-block">
             <% ship_form.object.shipping_rates.each do |rate| %>
-              <li class="list-group-item shipping-method">
+              <li class="checkout-delivery-shipping-row shipping-method">
                 <label>
                   <%= ship_form.radio_button :selected_shipping_rate_id, rate.id, data: { behavior: 'shipping-method-selector', cost: rate.display_cost } %>
                   <span class="rate-name"><%= rate.name %></span>
@@ -96,8 +96,13 @@
 
 <br />
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success' %>
+<div class="checkout-address-button-row" data-hook="buttons">
+  <div class="row">
+    <div class="col-sm-6">&nbsp;</div>
+    <div class="col-sm-6 checkout-address-button-block">
+      <%= submit_tag Spree.t(:save_and_continue), class: 'button-primary' %>
+    </div>
+  </div>
 </div>
 
 <%= javascript_include_tag 'spree/frontend/checkout/shipment' %>

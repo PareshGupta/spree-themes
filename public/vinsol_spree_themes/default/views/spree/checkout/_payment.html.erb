@@ -1,8 +1,6 @@
-<div class="panel panel-default" id="payment" data-hook>
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= Spree.t(:payment_information) %></h3>
-  </div>
-  <div class="panel-body" data-hook="checkout_payment_step">
+<div class="checkout-payment-section" id="payment" data-hook>
+  <h3 class="section-subtitle"><%= Spree.t(:payment_information) %></h3>
+  <div class="checkout-payment-block" data-hook="checkout_payment_step">
     <% if @payment_sources.present? %>
       <div class="card_options">
         <%= radio_button_tag 'use_existing_card', 'yes', true %>
@@ -58,14 +56,21 @@
       <% end %>
     </ul>
 
-    <p class='field' data-hook='coupon_code'>
-      <%= form.label :coupon_code %>
-      <%= form.text_field :coupon_code, class: 'form-control' %>
-    </p>
+    <div class="checkout-address-form">
+      <div class="checkout-address-form-row">
+        <%= form.label :coupon_code %>
+        <%= form.text_field :coupon_code, class: 'global-input' %>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
-  <script>Spree.disableSaveOnClick();</script>
+<div class="checkout-address-button-row" data-hook="buttons">
+  <div class="row">
+    <div class="col-sm-6">&nbsp;</div>
+    <div class="col-sm-6 checkout-address-button-block">
+      <%= submit_tag Spree.t(:save_and_continue), class: 'button-primary' %>
+      <script>Spree.disableSaveOnClick();</script>
+    </div>
+  </div>
 </div>

@@ -48,5 +48,24 @@ $secondary-font: 'Oswald', sans-serif;
     &:hover {
       color: $link-maroon;
     }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .global-footer {
+    font-size: 12px;
+
+    .footer-right {
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .footer-link {
+      margin-left: 15px;
+    }
   }
 }

@@ -328,6 +328,10 @@ ul.pagination {
     text-transform: uppercase;
   }
 
+  .sidebar-accordion-link {
+    display: none;
+  }
+
   .list-group {
     margin-bottom: 0;
   }
@@ -363,5 +367,47 @@ ul.pagination {
 
   .sidebar-button {
     margin-top: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-heading {
+    font-size: 18px;
+  }
+
+  #breadcrumbs {
+    margin-bottom: 0;
+  }
+
+  #sidebar {
+    margin-bottom: 40px;
+
+    .sidebar-item {
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    .list-group {
+      display: none;
+    }
+
+    .sidebar-accordion-link {
+      display: block;
+      text-align: right;
+
+      .icon-up {
+        display: none;
+      }
+
+      &.selected {
+        .icon-down {
+          display: none;
+        }
+
+        .icon-up {
+          display: inline-block;
+        }
+      }
+    }
   }
 }

@@ -72,4 +72,26 @@ $secondary-font: 'Oswald', sans-serif;
     margin-top: 8px;
     font-weight: 600;
   }
+
+  @media (max-width: 767px) {
+    height: 160px;
+    margin-bottom: 24px;
+
+    .product-image-block {
+      height: 100px;
+    }
+
+    .product-image {
+      max-height: 80px;
+    }
+
+    .product-content-block {
+      margin-top: 5px;
+    }
+
+    .product-price-block {
+      margin-top: 5px;
+      font-size: 12px;
+    }
+  }
 }

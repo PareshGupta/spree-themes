@@ -17,6 +17,13 @@ $secondary-font: 'Oswald', sans-serif;
   -webkit-border-radius: $radius;
 }
 
+@mixin transition($all, $time, $style) {
+  -moz-transition: $all $time $style;
+  -ms-transition: $all $time $style;
+  -webkit-transition: $all $time $style;
+  transition: $all $time $style;
+}
+
 @mixin select-appearance($option) {
   -webkit-appearance: $option;
   -moz-appearance: $option;
@@ -36,6 +43,10 @@ $secondary-font: 'Oswald', sans-serif;
       padding-bottom: 0;
       background: $color-white;
     }
+  }
+
+  .header-mobile-menu-block {
+    display: none;
   }
 
   .header-logo {
@@ -87,6 +98,10 @@ $secondary-font: 'Oswald', sans-serif;
       @include border-radius($full);
     }
   }
+}
+
+.header-mobile-cart-block {
+  display: none;
 }
 
 .header-primary-nav-row {
@@ -141,5 +156,108 @@ $secondary-font: 'Oswald', sans-serif;
     color: $color-white;
     line-height: 36px;
     background: $color-black;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-mobile-search-block {
+    width: $full;
+  }
+}
+
+@media (max-width: 767px) {
+  .global-header {
+    .header-logo {
+      font-size: 16px;
+    }
+
+    .header-mobile-menu-block {
+      display: inline-block;
+    }
+
+    .header-mobile-menu {
+      font-size: 16px;
+    }
+  }
+
+  .header-primary-nav,
+  .header-top-navbar {
+    display: none;
+  }
+
+  .header-search {
+    text-align: left;
+    .custom-select-holder {
+      display: none;
+    }
+
+    .header-search-input {
+      width: 84%;
+    }
+
+    .header-search-button {
+      margin-left: -4px;
+    }
+  }
+
+  .header-mobile-cart-block {
+    padding-top: 5px;
+    display: block;
+    text-align: right;
+
+    .glyphicon {
+      display: none;
+    }
+  }
+}
+
+.header-mobile-nav-dropdown {
+  width: $full;
+  height: $full;
+  position: fixed;
+  top: 0;
+  right: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, .7);
+  @include transition(all, .3s, ease-in-out);
+
+  &.visible {
+    right: 0;
+  }
+
+  .header-mobile-dropdown-close {
+    position: absolute;
+    top: 12px;
+    right: 11px;
+    color: $color-white;
+    font-size: 24px;
+  }
+
+  .header-mobile-nav-holder {
+    width: 86%;
+    height: $full;
+    padding: 20px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $link-maroon;
+  }
+
+  .header-top-nav {
+    width: $full;
+    border-bottom: solid 1px $light-grey-bg;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .header-top-nav-link {
+    padding: 8px 0;
+    display: block;
+    color: $color-white;
+    font-size: 13px;
+
+    .glyphicon {
+      display: none;
+    }
   }
 }
