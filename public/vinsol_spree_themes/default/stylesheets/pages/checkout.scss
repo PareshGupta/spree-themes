@@ -1,31 +1,3 @@
-$color-white: #fff;
-$color-black: #000;
-$light-grey-bg: #f7f7f9;
-$link-maroon: #C14463;
-$border-grey: #c7c7c7;
-$border-light-grey: #e8e8e8;
-
-$full: 100%;
-
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Oswald', sans-serif;
-
-
-@mixin border-radius($radius) {
-  border-radius: $radius;
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-}
-
-@mixin select-appearance($option) {
-  -webkit-appearance: $option;
-  -moz-appearance: $option;
-  appearance: $option;
-}
-
-
-
-
 .checkout-section {
   .checkout-progress-block {
     margin-top: 20px;
@@ -212,6 +184,10 @@ $secondary-font: 'Oswald', sans-serif;
   .checkout-order-itmes-table {
     margin-top: 30px;
   }
+}
+
+.checkout-user-section {
+  margin-top: 30px;
 }
 
 @media (max-width: 767px) {
