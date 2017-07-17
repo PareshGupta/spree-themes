@@ -1,3 +1,7 @@
+@import '../common/fonts.scss';
+@import '../common/variables.scss';
+@import '../common/mixins.scss';
+
 .product-image-section {
   .product-image-block {
     width: $full;

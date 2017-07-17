@@ -1,3 +1,7 @@
+@import '../common/fonts.scss';
+@import '../common/variables.scss';
+@import '../common/mixins.scss';
+
 .login-section {
   border-right: solid 1px $border-grey;
   padding-top: 20px;
