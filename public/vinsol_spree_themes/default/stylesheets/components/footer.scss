@@ -26,8 +26,12 @@ $secondary-font: 'Oswald', sans-serif;
 
 .global-footer {
   width: $full;
+  height: 50px;
   padding: 15px 0;
   display: table;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   color: $color-white;
   font-weight: 300;
   background: $color-black;
@@ -57,6 +61,8 @@ $secondary-font: 'Oswald', sans-serif;
 
 @media (max-width: 767px) {
   .global-footer {
+    height: auto;
+    position: static;
     font-size: 12px;
 
     .footer-right {
