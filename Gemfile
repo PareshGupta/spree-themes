@@ -29,6 +29,9 @@ gem 'spree', '~> 3.2.0'
 gem 'spree_auth_devise', '~> 3.2.0'
 gem 'spree_gateway', '~> 3.2.0'
 
+# FIX_ME_PG:- Need to include the gem for sprockets. (preview functionality)
+gem 'sprockets-helpers'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
@@ -47,4 +50,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree-themes', branch: 'development'
+gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree-themes', branch: 'production'
+# gem 'vinsol_spree_themes', path: '/Users/parshgupta/Desktop/SPREE/extensions/spree-themes'
