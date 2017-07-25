@@ -32,6 +32,7 @@ config/secrets.yml
 public/vinsol_spree_themes
 public/system/spree/themes
 public/assets/vinsol_spree_theme
+public/assets/preview_vinsol_spree_theme
 
 # Other files
 .DS_Store
