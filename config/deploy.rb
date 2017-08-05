@@ -17,6 +17,7 @@ set :linked_dirs, %w( log
                       tmp
                       public/assets
                       public/vinsol_spree_themes
+                      public/spree
                     )
 
 # Default branch is :master
