@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree_themes
   revision: 6ca1812fe8f17d9235f8e40c5d0febe7c6133776
-  branch: fixes
+  branch: master
   specs:
     vinsol_spree_themes (0.0.1)
       rubyzip (~> 1.2.1)
@@ -38,7 +38,7 @@ GEM
     activejob (5.0.5)
       activesupport (= 5.0.5)
       globalid (>= 0.3.6)
-    activemerchant (1.69.0)
+    activemerchant (1.70.0)
       activesupport (>= 3.2.14, < 6.x)
       builder (>= 2.1.2, < 4.0.0)
       i18n (>= 0.6.9)
