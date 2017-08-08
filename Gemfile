@@ -47,4 +47,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree-themes.git',  branch: 'production'
+gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree-themes.git',  branch: 'master'

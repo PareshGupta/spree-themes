@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/vinsol-spree-contrib/spree-themes.git
-  revision: aac8bbabb00e54de58949c1914f2181e5f1cc442
-  branch: production
+  revision: 9cd7a3707fb7f9356463efa090426488a773d109
+  branch: master
   specs:
-    vinsol_spree_themes (0.0.1.alpha)
+    vinsol_spree_themes (0.0.1)
       rubyzip (~> 1.2.1)
       spree_core (>= 3.2.0, < 4.0)
       sprockets-helpers (~> 1.2.1)

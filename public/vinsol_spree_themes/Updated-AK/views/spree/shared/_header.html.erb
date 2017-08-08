@@ -1,37 +1,35 @@
-<div id="spree-header" class="global-header">
+<div id="spree-header" class="header-section">
   <header id="header" data-hook>
-    <div class="container">
-      <div class="row">
-        <figure id="logo" class="col-md-4 col-sm-3 header-logo-section" data-hook>
-          <div class="row">
-            <div class="col-xs-6">
-              <a href="/" class="header-logo">Spree<b>Theme</b></a>
-            </div>
-            <div class="col-xs-6 text-right header-mobile-menu-block">
-              <a href="javascript:" class="header-mobile-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
-              <div class="header-mobile-nav-dropdown">
-                <a href="javascript:" class="glyphicon glyphicon-remove-circle header-mobile-dropdown-close"></a>
-                <ul class="header-mobile-nav-holder">
-                  <% if spree_current_user %>
-                    <li class="header-top-nav"><%= link_to Spree.t(:my_account), spree.account_path, class: 'header-top-nav-link' %></li>
-                    <li class="header-top-nav"><%= link_to Spree.t(:logout), spree.logout_path, class: 'header-top-nav-link' %></li>
-                  <% else %>
-                    <li id="link-to-login" class="header-top-nav">
-                      <%= link_to(spree.login_path, class: 'header-top-nav-link') do %>
-                        <span class="glyphicon glyphicon-user"></span>
-                        <%= Spree.t(:login) %>
-                      <% end %>
-                    </li>
-                  <% end %>
-                </ul>
+    <div class="header-top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">Welcome to the SpreeTheme</div>
+          <div class="col-sm-6">
+            <%= render partial: 'spree/shared/nav_bar' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom-section">
+      <div class="container">
+        <div class="row">
+          <div id="logo" class="col-sm-4 header-logo-section" data-hook>
+            <div class="row">
+              <div class="col-xs-6">
+                <a href="/" class="header-logo">Spree<b>Theme</b></a>
+              </div>
+              <div class="col-xs-6 text-right header-mobile-menu-block">
+                &nbsp;
               </div>
             </div>
-        </figure>
-        <%= render partial: 'spree/shared/nav_bar' %>
+          </div>
+
+          <div class="col-sm-8 header-search-block">
+            <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
+          </div>
+        </div>
       </div>
     </div>
   </header>
-  <div class="container">
-    <%= render partial: 'spree/shared/main_nav_bar' if store_menu? %>
-  </div>
 </div>

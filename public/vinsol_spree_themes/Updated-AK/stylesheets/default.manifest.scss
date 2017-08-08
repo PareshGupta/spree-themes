@@ -2,6 +2,9 @@
 * all stylesheet files should be required in this manifest.
 
 */
+@import 'lib/font-awesome.min.css';
+@import 'lib/jquery.bxslider.css';
+
 @import 'common/global';
 
 @import 'components/header';
@@ -10,6 +13,4 @@
 
 @import 'pages/home';
 @import 'pages/product-details';
-@import 'pages/cart';
-@import 'pages/checkout';
-@import 'pages/users';
+@import 'pages/forms';

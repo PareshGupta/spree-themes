@@ -8,7 +8,7 @@ html {
 
 body {
   min-height: $full;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   position: relative;
   font-family: $primary-font;
   background: $color-white;
@@ -45,8 +45,16 @@ a {
   }
 
   &:hover {
-    color: $link-maroon;
+    color: $link-blue;
     text-decoration: none;
+  }
+
+  &.link-blue {
+    color: $link-blue;
+
+    &:hover {
+      color: $color-black;
+    }
   }
 }
 
@@ -98,19 +106,19 @@ input {
 
     &:hover {
       color: $color-white;
+      background: $color-black;
     }
   }
 
   &:hover {
     color: $color-white;
-    background: $link-maroon;
+    background: $link-blue;
   }
 }
 
 .section-heading {
   width: $full;
-  border-bottom: solid 1px $border-grey;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
   color: $color-black;
   font-family: $secondary-font;
   font-size: 24px;
@@ -125,14 +133,6 @@ input {
   &.heading-center {
     text-align: center;
   }
-
-  &.no-border {
-    border: none;
-  }
-
-  &.no-spacing {
-    padding-bottom: 0;
-  }
 }
 
 .section-subtitle {
@@ -140,8 +140,7 @@ input {
   margin-bottom: 20px;
   border-bottom: solid 1px $border-light-grey;
   padding-bottom: 6px;
-  font-family: $secondary-font;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
 
   &.no-border {
@@ -159,11 +158,10 @@ input {
   font-family: $primary-font;
   font-size: 12px;
   line-height: 36px;
-  background: $link-maroon;
+  background: $link-blue;
 
   &.select-white {
     height: 40px;
-    border: solid 1px $border-grey;
     color: $color-black;
     background: $color-white;
 
@@ -205,6 +203,14 @@ input {
   }
 }
 
+.form-label {
+  margin-bottom: 5px;
+  font-weight: $bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .global-input {
   width: $full;
   height: 40px;
@@ -237,25 +243,38 @@ ul.pagination {
       font-family: $secondary-font;
       font-size: 12px;
       font-weight: 300;
+
+      &:hover {
+        color: $color-white;
+        background: $link-blue;
+      }
     }
   }
 
   > .active {
     a {
-      border-color: $link-maroon;
-      background: $link-maroon;
+      border-color: $link-blue;
+      background: $link-blue;
 
       &:hover {
         pointer-events: none;
-        border-color: $link-maroon;
-        background: $link-maroon;
+        border-color: $link-blue;
+        background: $link-blue;
       }
     }
   }
 }
 
-.homepage-brand {
+.home-banner-section,
+.hompage-slider-section {
   display: none;
+}
+
+#home-page {
+  .home-banner-section,
+  .hompage-slider-section {
+    display: block;
+  }
 }
 
 #breadcrumbs {
@@ -295,13 +314,12 @@ ul.pagination {
 
     &.active {
       a {
-        color: $link-maroon;
+        color: $link-blue;
       }
     }
   }
 
   a {
-    font-family: $secondary-font;
     font-size: 12px;
     font-weight: 300;
   }
@@ -310,15 +328,18 @@ ul.pagination {
 #sidebar {
   .sidebar-item {
     margin-bottom: 40px;
+    border: solid 1px $border-light-grey;
   }
 
-  h4 {
-    border-bottom: solid 1px $border-grey;
-    padding-bottom: 5px;
+  .sidebar-title {
+    border-bottom: solid 1px $border-light-grey;
+    padding: 10px;
+    color: $color-white;
     font-family: $secondary-font;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
+    background: $link-blue;
   }
 
   .sidebar-accordion-link {
@@ -332,10 +353,9 @@ ul.pagination {
   .list-group-item {
     margin: 0;
     border: none;
-    border-bottom: solid 1px $border-light-grey;
-    padding: 10px 0;
-    font-family: $secondary-font;
-    font-size: 12px;
+    border-top: solid 1px $border-light-grey;
+    padding: 10px;
+    font-size: 13px;
 
     label {
       margin-bottom: 0;
@@ -347,13 +367,17 @@ ul.pagination {
       background: transparent;
     }
 
+    &:first-child {
+      border-top: none;
+    }
+
     &:first-child,
     &:last-child {
       @include border-radius(0);
     }
 
     &:hover {
-      color: $link-maroon;
+      color: $link-blue;
       background: transparent;
     }
   }
