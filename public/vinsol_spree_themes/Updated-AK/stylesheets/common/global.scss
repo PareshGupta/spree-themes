@@ -119,6 +119,12 @@ input {
     color: $color-white;
     background: $link-blue;
   }
+
+  @media (max-width: 767px) {
+    &.button-small {
+      padding: 0 10px;
+    }
+  }
 }
 
 .section-heading {
@@ -427,6 +433,7 @@ ul.pagination {
 
     .sidebar-accordion-link {
       display: block;
+      color: $color-white;
       text-align: right;
 
       .icon-up {
