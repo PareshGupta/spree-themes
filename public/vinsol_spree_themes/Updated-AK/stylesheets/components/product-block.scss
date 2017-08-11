@@ -43,7 +43,7 @@
 
   .product-image-holder {
     width: $full;
-    height: 250px;
+    height: $full;
     border: solid 1px $border-light-grey;
     padding: 8px;
     display: table-cell;
@@ -62,5 +62,22 @@
 
   .product-price-block {
     font-weight: $bold;
+  }
+
+  @media (max-width: 767px) {
+    height: 220px;
+
+    .product-image-block {
+      height: 130px;
+    }
+
+    .product-cart-holder {
+      display: none;
+    }
+
+    .product-title,
+    .product-price-block {
+      font-size: 12px;
+    }
   }
 }

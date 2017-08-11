@@ -7,8 +7,9 @@
 <div id="order_summary" class="checkout-order-section" data-hook>
   <h2 class="section-heading"><%= Spree.t(:order_number, number: @order.number) %></h2>
   <!-- <h3 class="section-subtitle"><%= accurate_title %></h3> -->
+
   <% if order_just_completed?(@order) %>
-    <strong><%= Spree.t(:thank_you_for_your_order) %></strong>
+    <p><%= Spree.t(:thank_you_for_your_order) %></p>
   <% end %>
 
   <div id="order" class="checkout-order-block" data-hook>

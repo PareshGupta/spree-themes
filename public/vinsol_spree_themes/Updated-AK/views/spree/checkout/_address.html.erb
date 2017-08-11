@@ -27,17 +27,19 @@
 </div>
 
 <div class="checkout-address-button-row" data-hook="buttons">
-  <div class="row">
-    <div class="col-sm-6 checkout-address-save-block">
-      <% if try_spree_current_user %>
-        <span data-hook="save_user_address">
+  <div class="checkout-address-save-block">
+    <% if try_spree_current_user %>
+      <div class="checkbox" data-hook="save_user_address">
+        <%= label_tag :save_user_address do %>
           <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-          <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
-        </span>
-      <% end %>
-    </div>
-    <div class="col-sm-6 checkout-address-button-block">
-      <%= submit_tag Spree.t(:save_and_continue), class: 'button-primary' %>
-    </div>
+          <%= Spree.t(:save_my_address) %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row checkout-address-button-block">
+    <div class="col-sm-6">&nbsp;</div>
+    <div class="col-sm-6"><%= submit_tag Spree.t(:save_and_continue), class: 'button-primary' %></div>
   </div>
 </div>

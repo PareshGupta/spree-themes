@@ -14,19 +14,11 @@
   </div>
 
   <div class="row checkout-content-section" data-hook="checkout_content">
-    <% if @order.state != 'confirm' %>
-      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-sm-4">
-        <div class="checkout-summary-block">
-          <%= render partial: 'summary', locals: { order: @order } %>
-        </div>
-      </div>
-    <% end %>
-
-    <div class="<%= if @order.state != 'confirm' then 'col-sm-8 checkout-left-section' else 'col-md-12 checkout-left-section' end %>" data-hook="checkout_form_wrapper">
+    <div class="<%= if @order.state != 'confirm' then 'col-sm-8 checkout-form-section' else 'col-md-12 checkout-form-section' end %>" data-hook="checkout_form_wrapper">
       <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
         <% if @order.state == 'address' || !@order.email? %>
           <div class="checkout-address-block">
-            <%= form.label :email %>
+            <%= form.label :email, class: 'form-label' %>
             <%= form.text_field :email, class: 'global-input' %>
           </div>
         <% end %>
@@ -34,6 +26,14 @@
         <%= render @order.state, form: form %>
       <% end %>
     </div>
+
+    <% if @order.state != 'confirm' %>
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-sm-3 col-sm-offset-1">
+        <div class="checkout-summary-block">
+          <%= render partial: 'summary', locals: { order: @order } %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 

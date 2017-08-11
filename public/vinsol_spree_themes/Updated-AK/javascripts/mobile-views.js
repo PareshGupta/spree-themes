@@ -3,24 +3,37 @@ var MobileViews = function () {}
 MobileViews.prototype.init = function () {
   this.showMobileMenu();
   this.hideMobileMenu();
+  this.mobileSearch();
   this.mobileSideBarAccordions();
 }
 
 MobileViews.prototype.showMobileMenu = function () {
   var $menuLink = $('.header-mobile-menu'),
-      $menuDropDown = $('.header-mobile-nav-dropdown');
+      $menuDropDown = $('.header-mobile-menu-dropdown');
 
   $menuLink.on('click', function () {
-    $menuDropDown.addClass('visible');
+    $menuDropDown.addClass('show');
   });
 }
 
 MobileViews.prototype.hideMobileMenu = function () {
-  var $closeLink = $('.header-mobile-dropdown-close'),
-      $menuDropDown = $('.header-mobile-nav-dropdown');
+  var $closeLink = $('.header-mobile-menu-close-link'),
+      $menuDropDown = $('.header-mobile-menu-dropdown');
 
   $closeLink.on('click', function () {
-    $menuDropDown.removeClass('visible');
+    $menuDropDown.removeClass('show');
+  });
+}
+
+MobileViews.prototype.mobileSearch = function () {
+  var $mobileSearch = $('.mobile-search-icon'),
+      $searchBlock = $('.mobile-header-search');
+
+  $mobileSearch.on('click', function () {
+    var $this = $(this);
+
+    $this.toggleClass('selected');
+    $searchBlock.toggleClass('show');
   });
 }
 

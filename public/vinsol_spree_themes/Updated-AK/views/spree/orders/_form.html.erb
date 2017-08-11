@@ -14,7 +14,7 @@
   </tbody>
   <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
     <tr class="cart-subtotal">
-      <td colspan="4" align='right'><h5><%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %></h5></td>
+      <td colspan="4" align='right'><%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %></td>
       <td colspan><h5><%= order_form.object.display_item_total %></h5></td>
       <td></td>
     </tr>
@@ -24,12 +24,11 @@
     <td colspan="2" class="cart-coupon-block">
       <div class='' data-hook='coupon_code'>
         <%= order_form.label :coupon_code %>
-        <%= order_form.text_field :coupon_code, size: '30', class: 'form-control' %>
+        <%= order_form.text_field :coupon_code, size: '30', class: 'global-input' %>
         <%= button_tag Spree.t(:coupon_code_apply), class: 'button-primary button-small' %>
       </div>
     </td>
     <td colspan="2" align='right' class="cart-total-text"><%= Spree.t(:total) %></td>
-    <td class="cart-total-block" colspan><%= order_form.object.display_total %></td>
-    <td></td>
+    <td colspan="2" class="cart-total-block" colspan><%= order_form.object.display_total %></td>
   </tr>
 </table>

@@ -64,4 +64,16 @@
       }
     }
   }
+
+  @media (max-width: 767px) {
+    margin-top: 0;
+
+    .homepage-slider-row {
+      height: 260px;
+    }
+
+    .bx-wrapper {
+      margin-bottom: 30px;
+    }
+  }
 }

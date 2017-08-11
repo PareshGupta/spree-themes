@@ -13,12 +13,11 @@ Sliders.prototype.homeSlider = function () {
 
 Sliders.prototype.productThumbnailSlider = function () {
   $('#product-thumbnails').bxSlider({
-    minSlides: 4,
-    maxSlides: 4,
-    slideWidth: 90,
     slideMargin: 5,
     infiniteLoop: false,
-    hideControlOnEnd: true
+    hideControlOnEnd: true,
+    autoReload: true,
+    breaks: [{screen:0, slides:2, pager:false},{screen:460, slides:2},{screen:768, slides:4}]
   });
 }
 

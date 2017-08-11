@@ -1,6 +1,6 @@
 <% @body_id = 'cart' %>
 <div class="cart-section" data-hook="cart_container">
-  <h2 class="section-heading no-border"><%= Spree.t(:shopping_cart) %></h2>
+  <h2 class="section-heading"><%= Spree.t(:shopping_cart) %></h2>
 
   <% if @order.line_items.empty? %>
     <div data-hook="empty_cart">
@@ -32,7 +32,7 @@
       <% end %>
     </div>
 
-    <div class="row">
+    <div class="row cart-buttons-row">
       <div id="empty-cart" class="col-sm-6 cart-back-button-block" data-hook>
         <%= form_tag empty_cart_path, method: :put do %>
           <p id="clear_cart_link" data-hook>
