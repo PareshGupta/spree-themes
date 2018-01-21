@@ -1,4 +1,4 @@
-ruby "2.4.0"
+ruby "2.4.1"
 
 source 'https://rubygems.org'
 
@@ -11,7 +11,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
-gem 'pg', '0.18.1'
+gem 'pg', '~> 0.18'
+# gem 'mysql2'
 gem 'puma', '~> 3.7'
 
 # Use SCSS for stylesheets
@@ -26,11 +27,11 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 
 gem 'spree', '~> 3.2.0'
-gem 'spree_auth_devise', '~> 3.2.0'
-gem 'spree_gateway', '~> 3.2.0'
+gem 'spree_auth_devise', '~> 3.3'
+gem 'spree_gateway', '~> 3.3'
 
 # FIX_ME_PG:- Need to include the gem for sprockets. (preview functionality)
-gem 'sprockets-helpers'
+gem 'sprockets-helpers', '~> 1.2.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -50,5 +51,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree_themes', branch: 'master'
+gem 'vinsol_spree_themes', git: 'https://github.com/vinsol-spree-contrib/spree_themes', branch: '3-2-stable'
 # gem 'vinsol_spree_themes', path: '/Users/parshgupta/Desktop/SPREE/extensions/spree-themes'
